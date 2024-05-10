@@ -1,0 +1,8 @@
+1.DAOMYSQL
+2.generar la base de datos ( correr el script)
+3.empezar a hacer las tareas
+	-completa los metodos(getter setter, constructores)
+	-implementar un metodo para llamar desde el main
+		(como leer y escribir ficheros de texto) 
+
+4.aprender a listar de una tabla
