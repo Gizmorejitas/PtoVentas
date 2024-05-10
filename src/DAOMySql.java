@@ -5,7 +5,7 @@ public class DAOMySql {
 
     public DAOMySql()throws Exception{
 
-        String server_ip    =   "localhost";
+        String server_ip    =   "10.21.0.57";
         String server_port  =   "3306";
         String database     =   "ptoventa";
         String _usr         =   "root";

@@ -1,9 +1,13 @@
+import java.util.HashMap;
+import java.util.Map.Entry;
+
 public class Tienda {
    public String nombre;
    public String direccion;
    private int numArticulos = 0;
    private int numVendedores = 0;
 
+   //array fijos
    public Articulo[] artTienda;
    public Vendedor[] vendTienda;
 
@@ -17,55 +21,31 @@ public class Tienda {
       this.vendTienda = new Vendedor[numVendedores];
    }
 
-   public String getNombre() {
-      return nombre;
-   }
-
-   public void setNombre(String nombre) {
-      this.nombre = nombre;
-   }
-
-   public String getDireccion() {
-      return direccion;
-   }
-
-   public void setDireccion(String direccion) {
-      this.direccion = direccion;
-   }
-
-   public int getNumArticulos() {
-      return numArticulos;
-   }
-
-   public void setNumArticulos(int numArticulos) {
-      this.numArticulos = numArticulos;
-   }
-
-   public int getNumVendedores() {
-      return numVendedores;
-   }
-
-   public void setNumVendedores(int numVendedores) {
-      this.numVendedores = numVendedores;
-   }
-
-   public Articulo[] getArtTienda() {
-      return artTienda;
-   }
-
-   public void setArtTienda(Articulo[] artTienda) {
-      this.artTienda = artTienda;
-   }
-
-   public Vendedor[] getVendTienda() {
-      return vendTienda;
-   }
-
-   public void setVendTienda(Vendedor[] vendTienda) {
-      this.vendTienda = vendTienda;
-   }
+   //getter y setter
+   public String getNombre() {return nombre;}
+   public void setNombre(String nombre) {this.nombre = nombre;}
+   public String getDireccion() {return direccion;}
+   public void setDireccion(String direccion) {this.direccion = direccion;}
+   public int getNumArticulos() {return numArticulos;}
+   public void setNumArticulos(int numArticulos) {this.numArticulos = numArticulos;}
+   public int getNumVendedores() {return numVendedores;}
+   public void setNumVendedores(int numVendedores) {this.numVendedores = numVendedores;}
+   public Articulo[] getArtTienda() {return artTienda;}
+   public void setArtTienda(Articulo[] artTienda) {this.artTienda = artTienda;}
+   public Vendedor[] getVendTienda() {return vendTienda;}
+   public void setVendTienda(Vendedor[] vendTienda) {this.vendTienda = vendTienda;}
 
    // -- Métdos de negocio
+   public void ContratarUno(Vendedor v2){
+      this.vendHashTienda.put(v2.getMatricula(), v2);
+   }
+
+   public void ContratarVarios(HashMap<Integer,Vendedor> gv){
+      //this.vendHashTienda = gv;  // todos sobreescribe
+      for (Entry<Integer, Vendedor> e : gv.entrySet()) {
+         this.vendHashTienda.put(e.getKey(), e.getValue());
+      }
+   }
 
    public boolean Contratar(Vendedor v1, int posicion) {
 
@@ -134,10 +114,15 @@ public class Tienda {
       } // endfor
 
    }
+
    public String toString(){
       String result = "";
       result += nombre + " - " + direccion + " - " + numArticulos + " - " + numVendedores;
       return result;
 }
+   //Arraylist
+
+   //HashMap
+   public HashMap<Integer,Vendedor> vendHashTienda = new HashMap<Integer,Vendedor>();
 
 } // end class Tienda
