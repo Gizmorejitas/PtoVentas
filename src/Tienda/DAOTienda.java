@@ -19,8 +19,8 @@ public class DAOTienda {
 
     public DAOTienda() {
         try {
-            DAOMySql miConn = new DAOMySql();
-            c = miConn.c;
+            new DAOMySql();
+            c = DAOMySql.c;
         } catch (Exception e) {
             e.printStackTrace();
         }

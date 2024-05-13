@@ -1,8 +1,8 @@
+package Tools;
 import java.util.ArrayList;
-import java.util.HashMap;
+//import java.util.HashMap;
 
 import Tienda.*;
-import Tools.DAOMySql;
 import articulos.Articulo;
 
 public class PtoVenta {
@@ -15,17 +15,16 @@ public class PtoVenta {
                 if (miCon != null) {
                         System.out.println("Conexion exitosa.");
                         ArrayList<Tienda> misTiendas = new ArrayList<Tienda>();
-                        HashMap<String, Tienda> miTiendaHash = new HashMap<String, Tienda>();
+                        //HashMap<String, Tienda> miTiendaHash = new HashMap<String, Tienda>();
 
 
 
-                        // misTiendas = dt.getAllTiendas(miCon.c);
-                        // misTiendas = getAllTiendasCSV(ruta);
-                        // misTiendas = new ArrayList<>(dt.getAll_TiendasH(miCon.c).values());
-                        // miTiendaHash = dt.getAll_TiendasH(miCon.c);
-                        // dt.listarTiendaBD(miCon.c);
-                        // dt.imprimeTiendas(misTiendas);
-                        // imprimeTiendasH(miTiendaHash);
+                        misTiendas = dt.getAllTiendas(miCon.c);
+                        //misTiendas = getAllTiendasCSV(ruta);
+                        //misTiendas = new ArrayList<>(dt.getAll_TiendasH(miCon.c).values());
+                        //miTiendaHash = dt.getAll_TiendasH(miCon.c);
+                        //dt.listarTiendaBD(miCon.c);
+                        dt.imprimeTiendas(misTiendas);
                         miCon.c.close();
                 }
         }
