@@ -1,4 +1,5 @@
 package articulos;
+
 public class Bebida extends Articulo {
 
     private char envase;
@@ -10,12 +11,20 @@ public class Bebida extends Articulo {
         this.cantidad = cantidad;
     }
 
-    public char getEnvase() {return envase;}
-    public void setEnvase(char envase) {this.envase = envase;}
+    public char getEnvase() {
+        return envase;
+    }
 
-    public Integer getCantidad() {return cantidad;}
-    public void setCantidad(Integer cantidad) {this.cantidad = cantidad;}
+    public void setEnvase(char envase) {
+        this.envase = envase;
+    }
 
-    
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
 
 }
